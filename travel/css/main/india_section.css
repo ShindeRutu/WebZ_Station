@@ -1,0 +1,128 @@
+.india-nav {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
+    width: 350px;
+    height: 100px;
+  }
+  
+  .india-nav li {
+    list-style: none;
+    position: absolute;
+    width: 125px;
+    height: 125px;
+    background: #000;
+    transform: rotate(0deg);
+    transition: 0.5s;
+    margin: -70px;
+    overflow: hidden;
+    border: black solid 5px;
+    box-shadow: 7px 7px 5px rgb(39, 38, 38);
+  }
+  
+  /* positioning the block*/
+  .india-nav li.item1 {
+    top: -100%;
+    left: 50%;
+  }
+  
+  .india-nav li.item2 {
+    top:-100%;
+    left: 100%;
+  }
+  
+  .india-nav li.item3 {
+    top: 0;
+    left: 25%;
+  }
+  
+  .india-nav li.item4 {
+    top: 0;
+    left: 75%;
+  }
+  
+  .india-nav li.item5 {
+    bottom: 0;
+    left: 50%;
+  }
+  .india-nav li.item6 {
+    bottom: 0;
+    left: 100%;
+  }
+  .india-nav li.item7 {
+    bottom: -100%;
+    left: 25%;
+  }
+  .india-nav li.item8 {
+    bottom: -100%;
+    left: 75%;
+  }
+  
+  .india-nav li .bg {
+    width: 100%;
+    height: 100%;
+    transform: scale(1.1);
+  }
+  
+  /* adding image to the block*/
+  .india-nav li.item1 .bg {
+    background: url('../image/India/city.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .india-nav li.item2 .bg {
+    background: url(../image/India/nature/lion.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .india-nav li.item3 .bg {
+    background: url(../image/India/india_historical_monuments/Taj-Mahal-1.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .india-nav li.item4 .bg {
+    background: url(../image/India/india_historical_monuments/hawa-mahal-jaipur1.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .india-nav li.item5 .bg {
+    background: url(../image/Adventure/kayaking.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .india-nav li.item6 .bg {
+    background: url(../image/India/nature/himachal.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .india-nav li.item7 .bg {
+    background: url(../image/India/culture/sadubaba.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .india-nav li.item8 .bg {
+    background: url(../image/India/culture/kathkali.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  
+  
+  @media (max-width: 768px) {
+    .india-nav li, .bg 
+    {
+      position: static;
+      margin-top: 5px;
+      width: 200px;
+      height: 200px;
+    }
+  }

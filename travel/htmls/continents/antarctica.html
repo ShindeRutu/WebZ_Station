@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>Antarctica</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+ <!-- Favicons -->
+ <link href="../../image/logo.png" rel="icon">
+ <link href="../../image/logo.png" rel="apple-touch-icon">
+
+  <!-- Vendor CSS Files -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="../../css/remixicon/remixicon.css" rel="stylesheet"> 
+
+  <!-- Template Main CSS File -->
+  <link rel="stylesheet" href="../../css/main/continent.css">
+</head>
+<body style="background-color: rgb(22, 21, 21);">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand web_nme" href="#myPage">WebZ_Station</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="../../../Gp/index.html">Home</a></li>
+        <li><a href="../travel.html">Travel</a></li>
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Continents<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a href="africa.html"target="blank">Africa</a></li>
+                <li><a href="asia.html"target="blank">Asia</a></li>
+                <li><a href="australia.html"target="blank">Australia</a></li>
+                <li><a href="europe.html"target="blank">Europe</a></li>
+                <li><a href="north_america.html"target="blank">North America</a></li>
+                <li><a href="south_america.html"target="blank">South America</a></li> 
+            </ul>
+        </li>
+        <li><a href="../travel.html#footer">Contact us</a></li>
+       
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="../../image/Antarctica/antarctica.png" alt="" style="height: 500px;">    
+      </div>
+    </div>
+</div>
+
+<!--==============================================
+# zigzag pattern
+===============================================-->
+<!-- top places block-->
+<div class="container-fluid">
+    <div class="row" style="color: rgb(147, 147, 179);">
+      <div class="col-sm-6">
+        <h3 style="color: rgb(255, 179, 0);">TOP PLACES</h3>
+        <p style="font-size: 18px;">
+            You might think of Antarctica as one vast land of ice and 
+            not much else. But that couldn't be farther from the truth. 
+            Antarctica teems with incredible wildlife and stunning scenery. 
+            And in places such as the Falkland Islands, there are even 
+            people too! Here's our list to the best places to visit in Antarctica
+            </p>
+         <div style="float: left;"> 
+           <ul>
+             <li  class="list">South Shetland Islands</li>
+             <li  class="list">Antarctic Peninsula</li>
+             <li  class="list">Drake Passage</li>
+             <li  class="list">South Georgia</li>
+             <li  class="list">Falkland Islands</li>
+             <li  class="list">Lemaire Channel</li>
+             <li  class="list">Port Lockroy</li>  
+           </ul>
+         </div>
+         <div style="float: right;">
+             <ul>
+                <li  class="list">Ross Sea</li>
+                <li  class="list">King George Island</li>
+                <li  class="list">Blood Falls</li>
+                <li  class="list">Mt. Erebus</li>
+                <li  class="list">IceCube Research Station</li>
+                <li  class="list">Deception Island</li>
+                <li  class="list">Trinity Church</li>
+                <li  class="list">Colossal Penguin Colonies</li>   
+             </ul>
+         </div>
+      </div>
+      <div class="col-sm-6">
+        <img src="../../image/Antarctica/antarctica_places.png" style="width: 100%; height:auto;">
+      </div>
+    </div>
+  </div>
+  <!--end of city lover-->
+
+<!--back to top button-->
+<a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
+
+<!-- Footer -->
+<footer class="text-center">
+      <h3 style="color: rgb(255, 179, 0); font-size:30px;">WebZ_Station</h3>
+      <div class="copyright">
+        &copy; Copyright <strong><span>WebZ_Station</span></strong>. All Rights Reserved
+</footer><!-- End Footer -->
+
+<!-- Vendor JS Files -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="../../css/jquery/jquery.min.js"></script>
+<script src="../../css/jquery.easing/jquery.easing.min.js"></script>
+<!--Back to top button-->
+<script> 
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > 100) {
+      $('.back-to-top').fadeIn('slow');
+    } else {
+      $('.back-to-top').fadeOut('slow');
+    }
+  });
+
+  $('.back-to-top').click(function() {
+    $('html, body').animate({
+      scrollTop: 0
+    }, 1500, 'easeInOutExpo');
+    return false;
+  });
+</script>
+</body>
+</html>
