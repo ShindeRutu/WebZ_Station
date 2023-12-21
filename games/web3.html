@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Racing games</title>
+
+     <!-- Favicons -->
+  <link href="logo.png" rel="icon">
+  <link href="logo.png" rel="apple-touch-icon">
+
+  <link rel="stylesheet" href="css/lightslider.css">
+  <script src="js/JQuery3.3.1.js"></script>
+  <script src="js/lightslider.js"></script>
+
+  <style>
+    body{
+    margin:0px;
+    padding: 0px;
+    background-color: rgba(151,151,151,0.03);
+    background: linear-gradient(to top right, #000000 1%, #ffffff 100%)
+
+}
+*{
+    box-sizing: border-box;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+nav{
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width:100%;
+    border:1px solid rgba(0,0,0,0.04);
+    background-color: #ffffff;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+}
+.logo{
+    font-size:15px;
+    color:#000;
+    text-transform:uppercase;
+}
+nav .menu{
+    display: flex;
+}
+nav .menu li a{
+    height: 40px;
+    line-height: 43px;
+    margin: 0px;
+    padding: 0px 22px;
+    display: flex;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    color:#000000;
+    letter-spacing: 1px;
+}
+
+nav .menu li a:hover{
+    background-color: #242424;
+    color:#ffffff;
+    box-shadow: 5px 10px 30px rgba(53,53,53,0.1);
+    transition: all ease 0.2s;
+}
+#main{
+    padding-top: 80px;
+    background-color: #ffffff;
+    background: linear-gradient(to bottom right, #000000 1%, #ffffff 100%)
+
+}
+.showcase-box{
+    width:440px;
+    height: 480px;
+    box-shadow: 5px 15px 30px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    margin:0px 20px 10px 20px;
+    overflow: hidden;
+}
+.showcase-box img{
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+.showcase-heading{
+    padding-left: 30px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    color: #f8f8ff;
+}
+.cs-hidden{
+    overflow: visible !important;
+}
+#latest{
+    border-top: 1px solid rgba(53,53,53,0.1);
+}
+.latest-heading{
+    margin: 30px 30px 0px 30px;
+    font-weight: 500;
+    font-size: 1.3rem;
+    color:#ffffff;
+}
+.latest-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 2px 2px 30px rgba(0,0,0,0.2);
+    margin: 20px 10px;
+    border-radius: 10px;
+    overflow:hidden;
+    width:200px;
+    background-color: #402f2f;
+}
+.latest-b-img{
+    width:100%;
+    height: 270px;
+}
+.latest-b-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.latest-b-text strong{
+    padding:6px;
+    color:#fff;
+    margin: 0px;
+}
+.latest-b-text{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px;
+}
+.latest-b-text p{
+    color:#979797;
+    margin: 0px;
+}
+.games-heading h2{
+    font-weight: 400;
+    margin: 0px;
+    padding: 1px 20px;
+    background-color: rgba(0,0,0,0.01);
+
+    font-size: 1.7rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    width: 100%;
+}
+.games-heading{
+    display: flex;
+    margin:0px 2%;
+    color:#ffffff;
+}
+.games-box{
+    width:300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 2px 2px 30px rgba(0,0,0,0.2);
+    margin: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+    border-top: 3px solid #292929;
+}
+.games-img{
+    width:100%;
+    height: 400px;
+    position: relative;
+}
+.games-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.games-box a{
+    text-align:center;
+    display: block;
+    font-weight: 600;
+    display: -webkit-box;
+    max-width: 80%;
+    -webkit-line-clamp: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #f9f1f1;
+    margin: 20px;
+}
+.games-box:hover{
+    transform: translateY(-10px);
+    transition: all ease 0.2s;
+}
+#games-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.quality{
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #1f1f1f;
+    color: #ffffff;
+    padding: 5px 20px;
+    font-weight: 500;
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: 5px 10px 30px rgba(0,0,0,0.4);
+}
+
+footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid rgba(0,0,0,0.1);
+
+}
+footer p{
+    color:#ffffff;
+    margin: 10px 0px;
+    font-size: 0.9rem;
+}
+nav .menu-btn{
+    display: none;
+}
+@media(max-width:1100px){
+    nav{
+        justify-content: space-between;
+        height: 70px;
+        padding: 0px 10px;
+    }
+    nav .menu{
+       display: none;
+        position: absolute;
+        top: 65px;
+        left: 0px;
+        background: #fff;
+        border-bottom:4px solid #242424;
+        width:100%;
+        padding:0px;
+        margin:0px;
+    }
+    .menu li{
+        width:100%;
+    }
+    nav .menu li a{
+        width: 100%;
+        height: 40px;
+        align-items: center;
+        margin: 0px;
+        padding:25px;
+        border:1px solid rgba(38,38,38,0.03);
+    }
+
+    nav .menu-icon{
+        cursor: pointer;
+        float: right;
+        padding:28px 20px;
+        position: relative;
+        user-select: none;
+        display: block;
+    }
+    nav .menu-icon .nav-icon{
+        background-color: #333333;
+        display: block;
+        height: 2px;
+        position: relative;
+        transition: background 0.2s ease-out;
+        width: 18px;
+    }
+    nav .menu-icon .nav-icon:before,
+    nav .menu-icon .nav-icon:after{
+        background: #333333;
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        transition: all ease-out 0.2s;
+        width: 100%;
+    }
+    nav .menu-icon .nav-icon:before{
+        top:5px;
+    }
+    nav .menu-icon .nav-icon:after{
+        top:-5px;
+    }
+    nav .menu-btn:checked ~ .menu-icon .nav-icon{
+        background: transparent;
+
+    }
+    nav .menu-btn:checked ~ .menu-icon .nav-icon:before{
+        transform: rotate(-45deg);
+        top: 0;
+    }
+    nav .menu-btn:checked ~ .menu-icon .nav-icon:after{
+        transform: rotate(45deg);
+        top: 0;
+    }
+    nav .menu-btn{
+        display: none;
+    }
+    nav .menu-btn:checked ~ .menu{
+        display: block;
+    }
+}
+@media(max-width:680px){
+    .showcase-box{
+        max-width: 300px;
+        height: 180px;
+        margin: 10px;
+    }
+    .latest-box{
+        width:190px;
+        margin: 20px 5px;
+    }
+    .movies-box{
+        flex-direction: row;
+        width:90%;
+        border: 1px solid rgba(0,0,0,0.2);
+    }
+    .movies-box a{
+        width:65%;
+    }
+    footer{
+        justify-content: space-between;
+        padding:0px 20px;
+        text-align: center;
+    }
+}
+@media(max-width:440px){
+    .movies-box a,.movies-box{
+        width: 100%;
+    }
+    .movies-box{
+        flex-direction: column;
+    }
+    .logo img{
+        height: 30px;
+    }
+    .search{
+        width: 90%;
+        height: 40px;
+    }
+}
+  </style>
+</head>
+<body>
+ <!--navigation-------------->
+    <nav>
+        <!--logo--------------->
+        <a href="#" class="logo">
+            <h1>Webz_Station</h1>
+        </a>
+        <!--menu--btn----------------->
+        <input type="checkbox" class="menu-btn" id="menu-btn"/>
+        <label class="menu-icon" for="menu-btn">
+            <span class="nav-icon"></span>
+        </label>
+        <!--menu-------------->
+        <ul class="menu">
+            
+                <li><a href="../Gp/index.html">Home</a></li>
+                <li><a href="web.html">Games</a></li>
+                <li><a href="../Gp/index.html#services">Services</a></li>
+                <li><a href="../Gp/index.html#about">About</a></li>
+                <li><a href="../Gp/index.html#footer">contact</a></li>
+    
+           
+        </ul>
+        <!--search------------->
+
+    </nav>
+    <section id="main">
+        <!--showcase----------------------->
+        <!--heading------------->
+        <h1 class="showcase-heading">Showcase</h1>
+
+        <ul id="autoWidth" class="cs-hidden">
+
+        <!--box-1--------------------------->
+        <li class="item-a">
+            <!--showcase-box------------------->
+           <div class="showcase-box"><a href="https://www.rocketleague.com/" target="blank">
+               <img src="https://techcrunch.com/wp-content/uploads/2019/05/rl_cross-play_asset_rl_1920.309bf22bd29c2e411e9dd8eb07575bb1.jpg"/>
+                    </a>
+
+           </div>
+               </li>
+            <!--box-2--------------------------->
+            <li class="item-b">
+                <!--showcase-box------------------->
+               <div class="showcase-box"><a href="https://www.ea.com/en-gb/games/need-for-speed/need-for-speed-payback" target="blank">
+                   <img src="https://media.contentapi.ea.com/content/dam/need-for-speed/images/2017/06/nfspgenkeyartrgbhorz-16x9.jpg.adapt.crop191x100.1200w.jpg"></a>
+               </div>
+                   </li>
+                <!--box-3--------------------------->
+            <li class="item-c">
+                <!--showcase-box------------------->
+               <div class="showcase-box"><a href="https://www.ubisoft.com/en-gb/game/trackmania/trackmania" target="blank">
+                   <img src="https://cdn1.epicgames.com/b04882669b2e495e9f747c8560488c93/offer/GameName_Store_Landscape_2580x1450-2580x1450-253bf29bf65ddb881d22ad7592ad1c6a.jpg?h=480&resize=1&w=854"/></a>
+               </div>
+                   </li>
+                <!--box-4--------------------------->
+            <li class="item-d">
+                <!--showcase-box------------------->
+               <div class="showcase-box"><a href="https://forzamotorsport.net/en-US/games/fh4" target="blank">
+                   <img src="https://cdn.akamai.steamstatic.com/steam/apps/1293830/capsule_616x353.jpg?t=1615337540"/></a>
+               </div>
+                   </li>
+                   <!--box-5--------------------------->
+            <li class="item-e">
+                <!--showcase-box------------------->
+               <div class="showcase-box"><a href="https://asphaltlegends.com/?article=undefined" target="blank">
+                   <img src="https://play-lh.googleusercontent.com/cQBJ7Jwvz0jex8sL7LjgLId-wOdmMajSZbpC-bzHDhS5uK9Zms0fFsXEVNGvlIUk_g"/></a>
+               </div>
+                   </li>
+             <li class="item-f">
+                <!--showcase-box------------------->
+               <div class="showcase-box"><a href="https://www.formula1game.com/2020/" target="blank">
+                   <img src="https://image.api.playstation.com/vulcan/img/rnd/202010/1908/35Fq1N8ZBaOsh2odxMBGvjUj.png"/></a>
+               </div>
+                   </li>
+            <li class="item-g">
+                <!--showcase-box------------------->
+               <div class="showcase-box"><a href="https://dirt4.dirtgame.com/home" target="blank">
+                   <img src="https://image.api.playstation.com/cdn/EP4001/CUSA07062_00/Z8YFbNGbgk5HrqxXSzjwdONrmgsk1smt.png"/></a>
+               </div>
+                   </li>
+             <li class="item-h">
+                <!--showcase-box------------------->
+               <div class="showcase-box"><a href="https://www.ubisoft.com/en-gb/game/the-crew/the-crew-2" target="blank">
+                   <img src="https://image.api.playstation.com/cdn/EP0001/CUSA09665_00/FDrlPvhu2Mlmr18NTnTBT3Sh5dHfEfHY.png"/></a>
+               </div>
+                   </li>
+            <li class="item-i">
+                <!--showcase-box------------------->
+               <div class="showcase-box"><a href="https://order.wreckfestgame.com/" target="blank">
+                   <img src="https://image.api.playstation.com/vulcan/img/rnd/202010/1411/SkZZUr3taWJ7pb0LGpm7OaMf.png"/></a>
+               </div>
+                   </li>
+             <li class="item-j">
+                <!--showcase-box------------------->
+               <div class="showcase-box"><a href="https://motogpvideogame.com/" target="blank">
+                   <img src="https://image.api.playstation.com/vulcan/ap/rnd/202102/2311/wbFlN5z6XvcGXZzxC0KuvbRQ.png"/></a>
+               </div>
+                   </li>
+          </ul>
+
+    </section>
+    <!--latest-games---------------------->
+    <section id="latest">
+        <h2 class="latest-heading">Racing Games</h2>
+        <!--slider------------------->
+        <ul id="autoWidth2" class="cs-hidden">
+            <!--slide-box-1------------------>
+            <li class="item-a">
+                <div class="latest-box">
+                    <!--img-------->
+                    <div class="latest-b-img"><a href="https://www.ea.com/en-gb/games/need-for-speed/need-for-speed-rivals" target="blank">
+                        <img src="https://i.gadgets360cdn.com/products/large/1550845798_635_nfs_rivals.jpg"></a>
+                    </div>
+                    <!--text---------->
+                    <div class="latest-b-text">
+                        <strong>NEED FOR SPEED:RIVALS</strong>
+                        <p>racing GAME</p>
+                    </div>
+                </div>
+            </li>
+    <!--slide-box-2------------------>
+    <li class="item-b">
+        <div class="latest-box">
+            <!--img-------->
+            <div class="latest-b-img"><a href="https://www.ea.com/en-gb/games/need-for-speed/need-for-speed-most-wanted-2012" target="blank">
+                <img src="https://upload.wikimedia.org/wikipedia/en/b/b0/Nfs-most-wanted-2012-gen-packart.jpg"></a>
+            </div>
+            <!--text---------->
+            <div class="latest-b-text">
+                <strong>NEED FOR SPEED:MOST WANTED(2012)</strong>
+                <p>Racing Game</p>
+            </div>
+        </div>
+    </li>
+    <!--slide-box-3------------------>
+    <li class="item-c">
+        <div class="latest-box">
+            <!--img-------->
+            <div class="latest-b-img"><a href="https://www.ea.com/en-gb/games/need-for-speed/need-for-speed-heat" target="blank">
+                <img src="https://upload.wikimedia.org/wikipedia/en/7/7f/Cover_Art_of_Need_for_Speed_Heat.png"></a>
+            </div>
+            <!--text---------->
+            <div class="latest-b-text">
+                <strong>NEED FOR SPEED:HEAT</strong>
+                <p>Racing Game</p>
+            </div>
+        </div>
+    </li>
+    <!--slide-box-4------------------>
+    <li class="item-d">
+        <div class="latest-box">
+            <!--img-------->
+            <div class="latest-b-img"><a href="https://fingersoft.com/games/hill-climb-racing/" target="blank">
+                <img src="https://store-images.s-microsoft.com/image/apps.27192.9007199266379485.c1ef97c5-cf2f-4dbd-840d-c4c975f1b009.4c147b04-721a-4ac1-b7e9-151ad255f3f3"></a>
+            </div>
+            <!--text---------->
+            <div class="latest-b-text">
+                <strong>HILL CLIMB RACING</strong>
+                <p>Racing Game</p>
+            </div>
+        </div>
+    </li>
+    <!--slide-box-5------------------>
+    <li class="item-e">
+        <div class="latest-box">
+            <!--img-------->
+            <div class="latest-b-img"><a href="https://www.gameloft.com/asphalt8/" target="blank">
+                <img src="https://static-cdn.jtvnw.net/ttv-boxart/Asphalt%208.jpg"></a>
+            </div>
+            <!--text---------->
+            <div class="latest-b-text">
+                <strong>ASPHALT 8:AIRBORNE</strong>
+                <p>Racing Game</p>
+            </div>
+        </div>
+    </li>
+    <!--slide-box-6------------------>
+    <li class="item-f">
+        <div class="latest-box">
+            <!--img-------->
+            <div class="latest-b-img"><a href="https://mxgpvideogame.com/" target="blank">
+                <img src="https://install-game.com/wp-content/uploads/2021/01/MXGP-2020-game.png"></a>
+            </div>
+            <!--text---------->
+            <div class="latest-b-text">
+                <strong>MOTOCROSS GP</strong>
+                <p>Racing Game</p>
+            </div>
+        </div>
+    </li>
+    <!--slide-box-7------------------>
+    <li class="item-g">
+        <div class="latest-box">
+            <!--img-------->
+            <div class="latest-b-img"><a href="https://mariokart8.nintendo.com/" target="blank">
+                <img src="https://images-na.ssl-images-amazon.com/images/I/81iJG2js5-S._SY445_.jpg"></a>
+            </div>
+            <!--text---------->
+            <div class="latest-b-text">
+                <strong>MARIO KART 8 DELUXE</strong>
+                <p>Racing Game</p>
+            </div>
+        </div>
+    </li>
+          </ul>
+    </section>
+    <!--movies---------------------------->
+    <div class="games-heading">
+        <h2> Some More Games</h2>
+    </div>
+    <section id="games-list">
+        <!--box-1------------------------>
+        <div class="games-box">
+            <!--img------------>
+            <div class="games-img">
+                <div class="quality"></div>
+                <img src="https://s3.gaming-cdn.com/images/products/6800/orig/burnout-paradise-remastered-switch-cover.jpg">
+            </div>
+            <!--text--------->
+            <a href="https://www.ea.com/en-gb/games/burnout/burnout-paradise-remastered" target="blank">
+                <b>Burnout Paradise Remastered</b>(click here for more info)
+            </a>
+        </div>
+         <!--box-2------------------------>
+         <div class="games-box">
+            <!--img------------>
+            <div class="games-img">
+                <div class="quality"></div>
+                <img src="https://upload.wikimedia.org/wikipedia/en/8/85/Need_for_Speed_Hot_Pursuit_2010.jpg">
+            </div>
+            <!--text--------->
+            <a href="https://www.ea.com/en-gb/games/need-for-speed/need-for-speed-hot-pursuit-remastered" target="blank">
+               <b>Need For Speed Hot Pursuit</b>(click here for more info)
+            </a>
+        </div>
+         <!--box-3------------------------>
+         <div class="games-box">
+            <!--img------------>
+            <div class="games-img">
+                <div class="quality"></div>
+                <img src="https://image.api.playstation.com/vulcan/img/rnd/202009/0219/witS8C6Rswg5cINrjBdGdZXA.png">
+            </div>
+            <!--text--------->
+            <a href="https://www.tonyhawkthegame.com/" target="blank">
+              <b>Tony Hawk Pro Skater 1+2</b>(click here for more info)
+            </a>
+        </div>
+         <!--box-4------------------------>
+         <div class="games-box">
+            <!--img------------>
+            <div class="games-img">
+                <div class="quality"></div>
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c8/Assetto_Corsa_cover.png/220px-Assetto_Corsa_cover.png">
+            </div>
+            <!--text--------->
+            <a href="https://www.assettocorsa.it/en/" target="blank">
+                 <b>Assetto Corsa</b>(click here for more info)
+            </a>
+        </div>
+         <!--box-5------------------------>
+         <div class="games-box">
+            <!--img------------>
+            <div class="games-img">
+                <div class="quality"></div>
+                <img src="https://image.api.playstation.com/vulcan/ap/rnd/202011/1120/DpZUSDuCVmwPurm8UUJDttVF.png">
+            </div>
+            <!--text--------->
+            <a href="https://www.playstation.com/en-in/games/gran-turismo-7/" target="blank">
+               <b>Gran-Turismo-7 </b>(click here for more info)
+            </a>
+        </div>
+         <!--box-6------------------------>
+         <div class="games-box">
+            <!--img------------>
+            <div class="games-img">
+                <div class="quality"></div>
+                <img src="https://store-images.microsoft.com/image/apps.20134.9007199266250122.00d88580-d2d5-4900-b932-8e78e330dd06.b44c28f5-d6c4-4915-bcf5-9af80a7c95b2?mode=scale&q=90&h=300&w=300">
+            </div>
+            <!--text--------->
+            <a href="https://play.google.com/store/apps/details?id=com.skgames.trafficracer&hl=en_IN&gl=US" target="blank">
+               <b>Traffic Racer</b>(click here for more info)
+            </a>
+        </div>
+         <!--box-7------------------------>
+         <div class="games-box">
+            <!--img------------>
+            <div class="games-img">
+                <div class="quality"></div>
+                <img src="https://www.codemasters.com/wp-content/uploads/2018/09/ps_dirtrally2_2019.jpg">
+            </div>
+            <!--text--------->
+            <a href="https://dirtrally2.dirtgame.com/" target="blank">
+              <b>Dirt Rally 2.0</b>(click here for more info)
+            </a>
+        </div>
+         <!--box-8------------------------>
+         <div class="games-box">
+            <!--img------------>
+            <div class="games-img">
+                <div class="quality"></div>
+                <img src="https://images-na.ssl-images-amazon.com/images/I/71ZuHbTymAL._SL1078_.jpg">
+            </div>
+            <!--text--------->
+            <a href="https://www.ea.com/en-gb/games/need-for-speed/need-for-speed-shift-2-unleashed" target="blank">
+                <b>Shift 2:Unleashed</b>(click here for more info)
+            </a>
+        </div>
+    </section>
+ <script>
+         $(document).ready(function() {
+    $('#autoWidth,#autoWidth2').lightSlider({
+        autoWidth:true,
+        loop:true,
+        onSliderLoad: function() {
+            $('#autoWidth,#autoWidth2').removeClass('cS-hidden');
+        }
+    });
+  });
+ </script>
+
+    <!--footer------------------>
+    <footer>
+        <p>WEBZ_STATION, Ltd Consumer Website</p>
+        <p>Copyright 2021 - WEBZ_STATIONt</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adventure games</title>
+
+     <!-- Favicons -->
+  <link href="logo.png" rel="icon">
+  <link href="logo.png" rel="apple-touch-icon">
+
+  <link rel="stylesheet" href="css/lightslider.css">
+  <script src="js/JQuery3.3.1.js"></script>
+  <script src="js/lightslider.js"></script>
+
+  <style>
+     body{
+    margin:0px;
+    padding: 0px;
+    background-color: rgba(151,151,151,0.03);
+    background: linear-gradient(to top right, #000000 1%, #ffffff 100%)
+
+}
+*{
+    box-sizing: border-box;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+nav{
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width:100%;
+    border:1px solid rgba(0,0,0,0.04);
+    background-color: #ffffff;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+}
+.logo{
+  
+    font-size:15px;
+    color:#000;
+    text-transform:uppercase;
+}
+nav .menu{
+    display: flex;
+}
+nav .menu li a{
+    height: 40px;
+    line-height: 43px;
+    margin: 0px;
+    padding: 0px 22px;
+    display: flex;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    color:#000000;
+    letter-spacing: 1px;
+}
+
+nav .menu li a:hover{
+    background-color: #242424;
+    color:#ffffff;
+    box-shadow: 5px 10px 30px rgba(53,53,53,0.1);
+    transition: all ease 0.2s;
+}
+#main{
+    padding-top: 80px;
+    background-color: #ffffff;
+    background: linear-gradient(to bottom right, #000000 1%, #ffffff 100%)
+
+}
+.showcase-box{
+    width:440px;
+    height: 480px;
+    box-shadow: 5px 15px 30px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    margin:0px 20px 10px 20px;
+    overflow: hidden;
+}
+.showcase-box img{
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+.showcase-heading{
+    padding-left: 30px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    color: #f8f8ff;
+}
+.cs-hidden{
+    overflow: visible !important;
+}
+#latest{
+    border-top: 1px solid rgba(53,53,53,0.1);
+}
+.latest-heading{
+    margin: 30px 30px 0px 30px;
+    font-weight: 500;
+    font-size: 1.3rem;
+    color:#ffffff;
+}
+.latest-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 2px 2px 30px rgba(0,0,0,0.2);
+    margin: 20px 10px;
+    border-radius: 10px;
+    overflow:hidden;
+    width:200px;
+    background-color: #402f2f;
+}
+.latest-b-img{
+    width:100%;
+    height: 270px;
+}
+.latest-b-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.latest-b-text strong{
+    padding:6px;
+    color:#fff;
+    margin: 0px;
+}
+.latest-b-text{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px;
+}
+.latest-b-text p{
+    color:#979797;
+    margin: 0px;
+}
+.games-heading h2{
+    font-weight: 400;
+    margin: 0px;
+    padding: 1px 20px;
+    background-color: rgba(0,0,0,0.01);
+
+    font-size: 1.7rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    width: 100%;
+}
+.games-heading{
+    display: flex;
+    margin:0px 2%;
+    color:#ffffff;
+}
+.games-box{
+    width:300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 2px 2px 30px rgba(0,0,0,0.2);
+    margin: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+    border-top: 3px solid #292929;
+}
+.games-img{
+    width:100%;
+    height: 400px;
+    position: relative;
+}
+.games-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.games-box a{
+    text-align:center;
+    display: block;
+    font-weight: 600;
+    display: -webkit-box;
+    max-width: 80%;
+    -webkit-line-clamp: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #f9f1f1;
+    margin: 20px;
+}
+.games-box:hover{
+    transform: translateY(-10px);
+    transition: all ease 0.2s;
+}
+#games-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.quality{
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #1f1f1f;
+    color: #ffffff;
+    padding: 5px 20px;
+    font-weight: 500;
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: 5px 10px 30px rgba(0,0,0,0.4);
+}
+
+footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid rgba(0,0,0,0.1);
+
+}
+footer p{
+    color:#ffffff;
+    margin: 10px 0px;
+    font-size: 0.9rem;
+}
+nav .menu-btn{
+    display: none;
+}
+@media(max-width:1100px){
+    nav{
+        justify-content: space-between;
+        height: 70px;
+        padding: 0px 10px;
+    }
+    nav .menu{
+       display: none;
+        position: absolute;
+        top: 65px;
+        left: 0px;
+        background: #fff;
+        border-bottom:4px solid #242424;
+        width:100%;
+        padding:0px;
+        margin:0px;
+    }
+    .menu li{
+        width:100%;
+    }
+    nav .menu li a{
+        width: 100%;
+        height: 40px;
+        align-items: center;
+        margin: 0px;
+        padding:25px;
+        border:1px solid rgba(38,38,38,0.03);
+    }
+
+    nav .menu-icon{
+        cursor: pointer;
+        float: right;
+        padding:28px 20px;
+        position: relative;
+        user-select: none;
+        display: block;
+    }
+    nav .menu-icon .nav-icon{
+        background-color: #333333;
+        display: block;
+        height: 2px;
+        position: relative;
+        transition: background 0.2s ease-out;
+        width: 18px;
+    }
+    nav .menu-icon .nav-icon:before,
+    nav .menu-icon .nav-icon:after{
+        background: #333333;
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        transition: all ease-out 0.2s;
+        width: 100%;
+    }
+    nav .menu-icon .nav-icon:before{
+        top:5px;
+    }
+    nav .menu-icon .nav-icon:after{
+        top:-5px;
+    }
+    nav .menu-btn:checked ~ .menu-icon .nav-icon{
+        background: transparent;
+
+    }
+    nav .menu-btn:checked ~ .menu-icon .nav-icon:before{
+        transform: rotate(-45deg);
+        top: 0;
+    }
+    nav .menu-btn:checked ~ .menu-icon .nav-icon:after{
+        transform: rotate(45deg);
+        top: 0;
+    }
+    nav .menu-btn{
+        display: none;
+    }
+    nav .menu-btn:checked ~ .menu{
+        display: block;
+    }
+}
+@media(max-width:680px){
+    .showcase-box{
+        max-width: 300px;
+        height: 180px;
+        margin: 10px;
+    }
+    .latest-box{
+        width:190px;
+        margin: 20px 5px;
+    }
+    .movies-box{
+        flex-direction: row;
+        width:90%;
+        border: 1px solid rgba(0,0,0,0.2);
+    }
+    .movies-box a{
+        width:65%;
+    }
+    footer{
+        justify-content: space-between;
+        padding:0px 20px;
+        text-align: center;
+    }
+}
+@media(max-width:440px){
+    .movies-box a,.movies-box{
+        width: 100%;
+    }
+    .movies-box{
+        flex-direction: column;
+    }
+    .logo img{
+        height: 30px;
+    }
+    .search{
+        width: 90%;
+        height: 40px;
+    }
+}
+  </style>
+</head>
+<body>
+ <!--navigation-------------->
+    <nav>
+        <!--logo--------------->
+        <a href="#" class="logo">
+            <h1>Webz_Station</h1>
+        </a>
+        <!--menu--btn----------------->
+        <input type="checkbox" class="menu-btn" id="menu-btn"/>
+        <label class="menu-icon" for="menu-btn">
+            <span class="nav-icon"></span>
+        </label>
+        <!--menu-------------->
+        <ul class="menu">
+           
+                <li><a href="../Gp/index.html">Home</a></li>
+                <li><a href="web.html">Games</a></li>
+                <li><a href="../Gp/index.html#services">Services</a></li>
+                <li><a href="../Gp/index.html#about">About</a></li>
+                <li><a href="../Gp/index.html#footer">contact</a></li>
+    
+           
+
+        </ul>
+        <!--search------------->
+
+    </nav>
+    <section id="main">
+        <!--showcase----------------------->
+        <!--heading------------->
+        <h1 class="showcase-heading">Showcase</h1>
+
+        <ul id="autoWidth" class="cs-hidden">
+
+        <!--box-1--------------------------->
+        <li class="item-a">
+            <!--showcase-box------------------->
+           <div class="showcase-box"><a href="https://www.ea.com/en-gb/games/it-takes-two" target="blank">
+               <img src="https://image.api.playstation.com/vulcan/ap/rnd/202012/0815/7CRynuLSAb0vysSC4TmZy5e4.png"/>
+                    </a>
+
+           </div>
+               </li>
+            <!--box-2--------------------------->
+            <li class="item-b">
+                <!--showcase-box------------------->
+               <div class="showcase-box"><a href="https://www.minecraft.net/en-us" target="blank">
+                   <img src="https://image.api.playstation.com/vulcan/img/cfn/11307x4B5WLoVoIUtdewG4uJ_YuDRTwBxQy0qP8ylgazLLc01PBxbsFG1pGOWmqhZsxnNkrU3GXbdXIowBAstzlrhtQ4LCI4.png"></a>
+               </div>
+                   </li>
+                <!--box-3--------------------------->
+            <li class="item-c">
+                <!--showcase-box------------------->
+               <div class="showcase-box"><a href="https://square-enix-games.com/en_EU/games/life-is-strange" target="blank">
+                   <img src="https://store-images.s-microsoft.com/image/apps.60868.65692336169092801.e1d2c200-31f8-4985-8431-f22545ec1d3f.0485a6f4-8c3a-40e5-b215-4e848705e3f1"/></a>
+               </div>
+                   </li>
+                <!--box-4--------------------------->
+            <li class="item-d">
+                <!--showcase-box------------------->
+               <div class="showcase-box"><a href="https://genshin.mihoyo.com/pc-launcher/?utm_source=NA_google_GLB_search_keywords_20210108&mhy_trace_channel=ga_channel&new=1&gclid=CjwKCAjwos-HBhB3EiwAe4xM90Rx_sfK47qu6Y56qI0re_wMUt5w6VF38o_H2JIz4W6Mls8yflAzDBoCMeUQAvD_BwE#/" target="blank">
+                   <img src="https://i.ytimg.com/vi/jEp9yyhwZFE/maxresdefault.jpg"/></a>
+               </div>
+                   </li>
+                   <!--box-5--------------------------->
+            <li class="item-e">
+                <!--showcase-box------------------->
+               <div class="showcase-box"><a href="https://amanita-design.net/games/samorost3.html" target="blank">
+                   <img src="https://images-eu.ssl-images-amazon.com/images/I/91yoqV2OlSL.png"/></a>
+               </div>
+                   </li>
+             <li class="item-f">
+                <!--showcase-box------------------->
+               <div class="showcase-box"><a href="http://www.nightinthewoods.com/" target="blank">
+                   <img src="https://lh3.googleusercontent.com/proxy/R_gcZvJrn0cQblu_hHbQ4Bv_RFx_IO7eYWpV0LKQnXU8ZS_etPN3L-LyamVyJ1mwJJOOMmuGRBON2C_9xi8PxQzCRaAl-E43HZPOKMMX2b3RQ6b4NXOzKD0C66P5QR31frPJ-ERN75LEfuEoI-zh"/></a>
+               </div>
+                   </li>
+            <li class="item-g">
+                <!--showcase-box------------------->
+               <div class="showcase-box"><a href="https://www.firewatchgame.com/" target="blank">
+                   <img src="https://image.api.playstation.com/cdn/UP0146/CUSA04107_00/XFEn5Mk8QsgH7gB9iTEWMgg9LLHFRiuD.png"/></a>
+               </div>
+                   </li>
+             <li class="item-h">
+                <!--showcase-box------------------->
+               <div class="showcase-box"><a href="https://www.inklestudios.com/80days/" target="blank">
+                   <img src="https://www.inklestudios.com/press/80days/img/80-days-poster-promo.jpg"/></a>
+               </div>
+                   </li>
+            <li class="item-i">
+                <!--showcase-box------------------->
+               <div class="showcase-box"><a href="https://controlgame.com/" target="blank">
+                   <img src="https://i.ytimg.com/vi/ooh6Vb-El3U/maxresdefault.jpg"/></a>
+               </div>
+                   </li>
+             <li class="item-j">
+                <!--showcase-box------------------->
+               <div class="showcase-box"><a href="https://amanita-design.net/games/botanicula.html" target="blank">
+                   <img src="https://c4.wallpaperflare.com/wallpaper/726/52/915/art-botanicula-game-nature-wallpaper-preview.jpg"/></a>
+               </div>
+                   </li>
+          </ul>
+
+    </section>
+    <!--latest-games---------------------->
+    <section id="latest">
+        <h2 class="latest-heading">Adventure Games</h2>
+        <!--slider------------------->
+        <ul id="autoWidth2" class="cs-hidden">
+            <!--slide-box-1------------------>
+            <li class="item-a">
+                <div class="latest-box">
+                    <!--img-------->
+                    <div class="latest-b-img"><a href="" target="blank">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/1/13/Cover_art_of_Star_Wars_Jedi_Fallen_Order.jpg"></a>
+                    </div>
+                    <!--text---------->
+                    <div class="latest-b-text">
+                        <strong>STAR WARS JEDI:FALLEN ORDER</strong>
+                        <p>Adventure GAME</p>
+                    </div>
+                </div>
+            </li>
+    <!--slide-box-2------------------>
+    <li class="item-b">
+        <div class="latest-box">
+            <!--img-------->
+            <div class="latest-b-img"><a href="https://www.roblox.com/" target="blank">
+                <img src="https://store-images.s-microsoft.com/image/apps.23943.13510798883386282.e6f02eb7-a760-453e-8d79-46d4ec74807e.84e78792-8a8f-4ae3-a7a0-709c45161cf1"></a>
+            </div>
+            <!--text---------->
+            <div class="latest-b-text">
+                <strong>ROBLOX</strong>
+                <p>Adventure Game</p>
+            </div>
+        </div>
+    </li>
+    <!--slide-box-3------------------>
+    <li class="item-c">
+        <div class="latest-box">
+            <!--img-------->
+            <div class="latest-b-img"><a href="https://store.steampowered.com/app/346110/ARK_Survival_Evolved/" target="blank">
+                <img src="https://image.api.playstation.com/cdn/EP0688/CUSA06782_00/4Fn75AWWgOLZiFdxIA6HvSV5wC9c3WGp.png"></a>
+            </div>
+            <!--text---------->
+            <div class="latest-b-text">
+                <strong>ARK</strong>
+                <p>Adventure Game</p>
+            </div>
+        </div>
+    </li>
+    <!--slide-box-4------------------>
+    <li class="item-d">
+        <div class="latest-box">
+            <!--img-------->
+            <div class="latest-b-img"><a href="https://www.ea.com/en-gb/games/a-way-out" target="blank">
+                <img src="https://media.contentapi.ea.com/content/dam/eacom/en-us/migrated-images/2017/05/hero2.jpg.adapt.crop191x100.1200w.jpg"></a>
+            </div>
+            <!--text---------->
+            <div class="latest-b-text">
+                <strong>A WAY OUT</strong>
+                <p>Adventure Game</p>
+            </div>
+        </div>
+    </li>
+    <!--slide-box-5------------------>
+    <li class="item-e">
+        <div class="latest-box">
+            <!--img-------->
+            <div class="latest-b-img"><a href="https://www.focus-home.com/en-us/games/a-plague-tale-innocence" target="blank">
+                <img src="https://upload.wikimedia.org/wikipedia/en/1/1d/A_Plague_Tale_cover_art.jpg"></a>
+            </div>
+            <!--text---------->
+            <div class="latest-b-text">
+                <strong>A PLAGUE TALE:INNOCENCE</strong>
+                <p>Game</p>
+            </div>
+        </div>
+    </li>
+    <!--slide-box-6------------------>
+    <li class="item-f">
+        <div class="latest-box">
+            <!--img-------->
+            <div class="latest-b-img"><a href="https://unknownworlds.com/subnautica/subnautica-below-zero/" target="blank">
+                <img src="https://image.api.playstation.com/vulcan/ap/rnd/202103/1000/ajXEVMJhzxXuOezVXR6bFOkK.png"></a>
+            </div>
+            <!--text---------->
+            <div class="latest-b-text">
+                <strong>SUBNAUTICA:BELOW ZERO</strong>
+                <p>Adventure Game</p>
+            </div>
+        </div>
+    </li>
+    <!--slide-box-7------------------>
+    <li class="item-g">
+        <div class="latest-box">
+            <!--img-------->
+            <div class="latest-b-img"><a href="https://pokemongolive.com/en/" target="blank">
+                <img src="https://play-lh.googleusercontent.com/eUB-B5VHx3y7EPFBHM_DQpuNxqLSlE74u66SqDsT1bPwkFKjJt0EUSNiLBIa-bGkBw"></a>
+            </div>
+            <!--text---------->
+            <div class="latest-b-text">
+                <strong>Pokémon GO</strong>
+                <p>Adventure Game</p>
+            </div>
+        </div>
+    </li>
+          </ul>
+    </section>
+    <!--GAMES---------------------------->
+    <div class="games-heading">
+        <h2> Some More Games</h2>
+    </div>
+    <section id="games-list">
+        <!--box-1------------------------>
+        <div class="games-box">
+            <!--img------------>
+            <div class="games-img">
+                <div class="quality"></div>
+                <img src="https://images.nintendolife.com/d0ae00f3e7408/legend-of-zelda-skyward-sword-hd-cover.cover_300x.jpg">
+            </div>
+            <!--text--------->
+            <a href="https://www.zelda.com/skyward-sword-hd/" target="blank">
+                <b>The Legend Of Zelda:skyward-sword-hd</b>(click here for more info)
+            </a>
+        </div>
+         <!--box-2------------------------>
+         <div class="games-box">
+            <!--img------------>
+            <div class="games-img">
+                <div class="quality"></div>
+                <img src="https://media.contentapi.ea.com/content/dam/eacom/en-us/migrated-images/2017/06/anthem-dylan.jpg.adapt.crop191x100.1200w.jpg">
+            </div>
+            <!--text--------->
+            <a href="https://www.ea.com/en-gb/games/anthem" target="blank">
+               <b>Anthem</b>(click here for more info)
+            </a>
+        </div>
+         <!--box-3------------------------>
+         <div class="games-box">
+            <!--img------------>
+            <div class="games-img">
+                <div class="quality"></div>
+                <img src="https://i.ytimg.com/vi/P2G54w8H4oM/maxresdefault.jpg">
+            </div>
+            <!--text--------->
+            <a href="https://abzugame.com/" target="blank">
+              <b>Abzu</b>(click here for more info)
+            </a>
+        </div>
+         <!--box-4------------------------>
+         <div class="games-box">
+            <!--img------------>
+            <div class="games-img">
+                <div class="quality"></div>
+                <img src="https://cdn.vox-cdn.com/thumbor/HnaG0oaGnmkrJZBQuN-lUZoGCjw=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/22284249/JTghsjX2IS4g0VlPcFXfDhTv.jpg">
+            </div>
+            <!--text--------->
+            <a href="https://www.ubisoft.com/en-gb/game/prince-of-persia/sands-of-time-remake" target="blank">
+                 <b>Prince Of Persia:the sand of time</b>(click here for more info)
+            </a>
+        </div>
+         <!--box-5------------------------>
+         <div class="games-box">
+            <!--img------------>
+            <div class="games-img">
+                <div class="quality"></div>
+                <img src="https://upload.wikimedia.org/wikipedia/en/b/b4/Prince_Of_Persia_Forgotten_Sands_Box_Artwork.jpg">
+            </div>
+            <!--text--------->
+            <a href="https://www.ubisoft.com/en-gb/game/prince-of-persia/the-forgotten-sands" target="blank">
+               <b>Prince Of Persia The Forgotten Sands </b>(click here for more info)
+            </a>
+        </div>
+         <!--box-6------------------------>
+         <div class="games-box">
+            <!--img------------>
+            <div class="games-img">
+                <div class="quality"></div>
+                <img src="https://upload.wikimedia.org/wikipedia/en/6/6f/Prince_of_Persia_-_Warrior_Within_Coverart.png">
+            </div>
+            <!--text--------->
+            <a href="https://store.steampowered.com/app/13500/Prince_of_Persia_Warrior_Within/" target="blank">
+               <b>Prince Of Persia Warrior Within</b>(click here for more info)
+            </a>
+        </div>
+         <!--box-7------------------------>
+         <div class="games-box">
+            <!--img------------>
+            <div class="games-img">
+                <div class="quality"></div>
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/1f/Alan_Wake_Game_Cover.jpg/220px-Alan_Wake_Game_Cover.jpg">
+            </div>
+            <!--text--------->
+            <a href="https://www.remedygames.com/games/alan-wake/" target="blank">
+              <b>Alan Wake</b>(click here for more info)
+            </a>
+        </div>
+         <!--box-8------------------------>
+         <div class="games-box">
+            <!--img------------>
+            <div class="games-img">
+                <div class="quality"></div>
+                <img src="https://i0.wp.com/blog.indiegala.com/wp-content/uploads/2021/03/Deponia.jpg?fit=1920%2C1080&ssl=1">
+            </div>
+            <!--text--------->
+            <a href="https://www.daedalic.com/deponia" target="blank">
+                <b>Deponia</b>(click here for more info)
+            </a>
+        </div>
+    </section>
+ <script>
+         $(document).ready(function() {
+    $('#autoWidth,#autoWidth2').lightSlider({
+        autoWidth:true,
+        loop:true,
+        onSliderLoad: function() {
+            $('#autoWidth,#autoWidth2').removeClass('cS-hidden');
+        }
+    });
+  });
+ </script>
+
+    <!--footer------------------>
+    <footer>
+        <p>WEBZ_STATION, Ltd Consumer Website</p>
+        <p>Copyright 2021 - WEBZ_STATIONt</p>
+    </footer>
+
+</body>
+</html>

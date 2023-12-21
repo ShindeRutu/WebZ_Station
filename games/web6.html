@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Puzzle Games</title>
+ <!-- Favicons -->
+ <link href="logo.png" rel="icon">
+ <link href="logo.png" rel="apple-touch-icon">
+
+
+  <link rel="stylesheet" href="css/lightslider.css">
+  <script src="js/JQuery3.3.1.js"></script>
+  <script src="js/lightslider.js"></script>
+
+  <style>
+     body{
+    margin:0px;
+    padding: 0px;
+    background-color: rgba(151,151,151,0.03);
+    background: linear-gradient(to top right, #000000 1%, #ffffff 100%)
+
+}
+*{
+    box-sizing: border-box;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+nav{
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width:100%;
+    border:1px solid rgba(0,0,0,0.04);
+    background-color: #ffffff;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+}
+.logo{
+
+    font-size:15px;
+    color:#000;
+    text-transform:uppercase;
+}
+nav .menu{
+    display: flex;
+}
+nav .menu li a{
+    height: 40px;
+    line-height: 43px;
+    margin: 0px;
+    padding: 0px 22px;
+    display: flex;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    color:#000000;
+    letter-spacing: 1px;
+}
+
+nav .menu li a:hover{
+    background-color: #242424;
+    color:#ffffff;
+    box-shadow: 5px 10px 30px rgba(53,53,53,0.1);
+    transition: all ease 0.2s;
+}
+#main{
+    padding-top: 80px;
+    background-color: #ffffff;
+    background: linear-gradient(to bottom right, #000000 1%, #ffffff 100%)
+
+}
+.showcase-box{
+    width:440px;
+    height: 480px;
+    box-shadow: 5px 15px 30px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    margin:0px 20px 10px 20px;
+    overflow: hidden;
+}
+.showcase-box img{
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+.showcase-heading{
+    padding-left: 30px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    color: #f8f8ff;
+}
+.cs-hidden{
+    overflow: visible !important;
+}
+#latest{
+    border-top: 1px solid rgba(53,53,53,0.1);
+}
+.latest-heading{
+    margin: 30px 30px 0px 30px;
+    font-weight: 500;
+    font-size: 1.3rem;
+    color:#ffffff;
+}
+.latest-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 2px 2px 30px rgba(0,0,0,0.2);
+    margin: 20px 10px;
+    border-radius: 10px;
+    overflow:hidden;
+    width:200px;
+    background-color: #402f2f;
+}
+.latest-b-img{
+    width:100%;
+    height: 270px;
+}
+.latest-b-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.latest-b-text strong{
+    padding:6px;
+    color:#fff;
+    margin: 0px;
+}
+.latest-b-text{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px;
+}
+.latest-b-text p{
+    color:#979797;
+    margin: 0px;
+}
+.games-heading h2{
+    font-weight: 400;
+    margin: 0px;
+    padding: 1px 20px;
+    background-color: rgba(0,0,0,0.01);
+
+    font-size: 1.7rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    width: 100%;
+}
+.games-heading{
+    display: flex;
+    margin:0px 2%;
+    color:#ffffff;
+}
+.games-box{
+    width:300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 2px 2px 30px rgba(0,0,0,0.2);
+    margin: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+    border-top: 3px solid #292929;
+}
+.games-img{
+    width:100%;
+    height: 400px;
+    position: relative;
+}
+.games-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.games-box a{
+    text-align:center;
+    display: block;
+    font-weight: 600;
+    display: -webkit-box;
+    max-width: 80%;
+    -webkit-line-clamp: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #f9f1f1;
+    margin: 20px;
+}
+.games-box:hover{
+    transform: translateY(-10px);
+    transition: all ease 0.2s;
+}
+#games-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.quality{
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #1f1f1f;
+    color: #ffffff;
+    padding: 5px 20px;
+    font-weight: 500;
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: 5px 10px 30px rgba(0,0,0,0.4);
+}
+
+footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid rgba(0,0,0,0.1);
+
+}
+footer p{
+    color:#ffffff;
+    margin: 10px 0px;
+    font-size: 0.9rem;
+}
+nav .menu-btn{
+    display: none;
+}
+@media(max-width:1100px){
+    nav{
+        justify-content: space-between;
+        height: 70px;
+        padding: 0px 10px;
+    }
+    nav .menu{
+       display: none;
+        position: absolute;
+        top: 65px;
+        left: 0px;
+        background: #fff;
+        border-bottom:4px solid #242424;
+        width:100%;
+        padding:0px;
+        margin:0px;
+    }
+    .menu li{
+        width:100%;
+    }
+    nav .menu li a{
+        width: 100%;
+        height: 40px;
+        align-items: center;
+        margin: 0px;
+        padding:25px;
+        border:1px solid rgba(38,38,38,0.03);
+    }
+
+    nav .menu-icon{
+        cursor: pointer;
+        float: right;
+        padding:28px 20px;
+        position: relative;
+        user-select: none;
+        display: block;
+    }
+    nav .menu-icon .nav-icon{
+        background-color: #333333;
+        display: block;
+        height: 2px;
+        position: relative;
+        transition: background 0.2s ease-out;
+        width: 18px;
+    }
+    nav .menu-icon .nav-icon:before,
+    nav .menu-icon .nav-icon:after{
+        background: #333333;
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        transition: all ease-out 0.2s;
+        width: 100%;
+    }
+    nav .menu-icon .nav-icon:before{
+        top:5px;
+    }
+    nav .menu-icon .nav-icon:after{
+        top:-5px;
+    }
+    nav .menu-btn:checked ~ .menu-icon .nav-icon{
+        background: transparent;
+
+    }
+    nav .menu-btn:checked ~ .menu-icon .nav-icon:before{
+        transform: rotate(-45deg);
+        top: 0;
+    }
+    nav .menu-btn:checked ~ .menu-icon .nav-icon:after{
+        transform: rotate(45deg);
+        top: 0;
+    }
+    nav .menu-btn{
+        display: none;
+    }
+    nav .menu-btn:checked ~ .menu{
+        display: block;
+    }
+}
+@media(max-width:680px){
+    .showcase-box{
+        max-width: 300px;
+        height: 180px;
+        margin: 10px;
+    }
+    .latest-box{
+        width:190px;
+        margin: 20px 5px;
+    }
+    .movies-box{
+        flex-direction: row;
+        width:90%;
+        border: 1px solid rgba(0,0,0,0.2);
+    }
+    .movies-box a{
+        width:65%;
+    }
+    footer{
+        justify-content: space-between;
+        padding:0px 20px;
+        text-align: center;
+    }
+}
+@media(max-width:440px){
+    .movies-box a,.movies-box{
+        width: 100%;
+    }
+    .movies-box{
+        flex-direction: column;
+    }
+    .logo img{
+        height: 30px;
+    }
+    .search{
+        width: 90%;
+        height: 40px;
+    }
+}
+  </style>
+</head>
+<body>
+ <!--navigation-------------->
+    <nav>
+        <!--logo--------------->
+        <a href="#" class="logo">
+            <h1>Webz_Station</h1>
+        </a>
+        <!--menu--btn----------------->
+        <input type="checkbox" class="menu-btn" id="menu-btn"/>
+        <label class="menu-icon" for="menu-btn">
+            <span class="nav-icon"></span>
+        </label>
+        <!--menu-------------->
+        
+            <ul class="menu">
+                <li><a href="../Gp/index.html">Home</a></li>
+                <li><a href="web.html">Games</a></li>
+                <li><a href="../Gp/index.html#services">Services</a></li>
+                <li><a href="../Gp/index.html#about">About</a></li>
+                <li><a href="../Gp/index.html#footer">contact</a></li>
+        </ul>
+
+    </nav>
+    <section id="main">
+        <!--showcase----------------------->
+        <!--heading------------->
+        <h1 class="showcase-heading">Showcase</h1>
+
+        <ul id="autoWidth" class="cs-hidden">
+
+        <!--box-1--------------------------->
+        <li class="item-a">
+            <!--showcase-box------------------->
+           <div class="showcase-box"><a href="https://www.monumentvalleygame.com/mv1" target="blank">
+               <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/f1fcb0ff-aae1-463f-8234-d6cd08851ce8/dcn6j6h-5342e909-e0e8-43f3-8a89-ec0214ecc63c.png/v1/fill/w_1024,h_1388,strp/monument_valley_game_by_nachiostep_dcn6j6h-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTM4OCIsInBhdGgiOiJcL2ZcL2YxZmNiMGZmLWFhZTEtNDYzZi04MjM0LWQ2Y2QwODg1MWNlOFwvZGNuNmo2aC01MzQyZTkwOS1lMGU4LTQzZjMtOGE4OS1lYzAyMTRlY2M2M2MucG5nIiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.YHhya5Bor7XMSrZVAXjgBB_rwZGsW7plVvIm_NpmBdM"/>
+                    </a>
+
+           </div>
+               </li>
+            <!--box-2--------------------------->
+            <li class="item-b">
+                <!--showcase-box------------------->
+               <div class="showcase-box"><a href="https://www.fireproofgames.com/games/the-room" target="blank">
+                   <img src="https://i.ytimg.com/vi/9W_OZeZ-wPU/maxresdefault.jpg"></a>
+               </div>
+                   </li>
+                <!--box-3--------------------------->
+            <li class="item-c">
+                <!--showcase-box------------------->
+               <div class="showcase-box"><a href="https://store.steampowered.com/app/400/Portal/" target="blank">
+                   <img src="https://desktopwalls.net/wp-content/uploads/2014/07/Portal%20Game%20HD%20Desktop%20Wallpaper.jpg"/></a>
+               </div>
+                   </li>
+                <!--box-4--------------------------->
+            <li class="item-d">
+                <!--showcase-box------------------->
+               <div class="showcase-box"><a href="http://www.croteam.com/talosprinciple/" target="blank">
+                   <img src="https://image.api.playstation.com/cdn/EP3643/CUSA01256_00/elkuVZsqS3QCzzaissCxvSV3y73c9Tvm.png"/></a>
+               </div>
+                   </li>
+                   <!--box-5--------------------------->
+            <li class="item-e">
+                <!--showcase-box------------------->
+               <div class="showcase-box"><a href="https://www.chess.com/" target="blank">
+                   <img src="https://wallpapermemory.com/uploads/373/chess-background-hd-1680x1050-378887.jpg"/></a>
+               </div>
+                   </li>
+             <li class="item-f">
+                <!--showcase-box------------------->
+               <div class="showcase-box"><a href="https://scrabble.hasbro.com/en-us" target="blank">
+                   <img src="https://thumbs-prod.si-cdn.com/ize7pkXCfv31hci6v3QCtKsMUj0=/fit-in/1600x0/https://public-media.si-cdn.com/filer/e7/6f/e76f3161-6fef-4370-a839-4a622af22ebc/close-up-letters-scrabble-278881.jpg"/></a>
+               </div>
+                   </li>
+            <li class="item-g">
+                <!--showcase-box------------------->
+               <div class="showcase-box"><a href="https://play2048.co/" target="blank">
+                   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/2048_logo.svg/1200px-2048_logo.svg.png"/></a>
+               </div>
+                   </li>
+             <li class="item-h">
+                <!--showcase-box------------------->
+               <div class="showcase-box"><a href="http://gorogoa.com/" target="blank">
+                   <img src="https://light-in-the-attic.s3.amazonaws.com/uploads/release_image/24425/image/tmp_2F1568145145148-prvr4qagann-f2643ed512248600fda9a37b6197ed6c_2FGo_Store_icon_768x768.png"/></a>
+               </div>
+                   </li>
+            <li class="item-i">
+                <!--showcase-box------------------->
+               <div class="showcase-box"><a href="https://505games.com/games/human-fall-flat/" target="blank">
+                   <img src="https://i.ytimg.com/vi/uk9XoSqQyQs/maxresdefault.jpg"/></a>
+               </div>
+                   </li>
+             <li class="item-j">
+                <!--showcase-box------------------->
+               <div class="showcase-box"><a href="https://www.mekorama.com/" target="blank">
+                   <img src="https://www.indiegamecritic.com/wp-content/uploads/2018/07/Screenshot_2018-07-30-11-41-42.png"/></a>
+               </div>
+                   </li>
+          </ul>
+
+    </section>
+    <!--latest-games---------------------->
+    <section id="latest">
+        <h2 class="latest-heading">Puzzle Games</h2>
+        <!--slider------------------->
+        <ul id="autoWidth2" class="cs-hidden">
+            <!--slide-box-1------------------>
+            <li class="item-a">
+                <div class="latest-box">
+                    <!--img-------->
+                    <div class="latest-b-img"><a href="https://brainitongame.com/" target="blank">
+                        <img src="https://play-lh.googleusercontent.com/Emg6Xd5XTcIYlMqXT1wTp33RHnNyf8nY6DPQGsMadF4Gr_kgH7PSN77SQLMLHVK90Q"></a>
+                    </div>
+                    <!--text---------->
+                    <div class="latest-b-text">
+                        <strong>BRAIN IT ON!</strong>
+                        <p>Puzzle GAME</p>
+                    </div>
+                </div>
+            </li>
+    <!--slide-box-2------------------>
+    <li class="item-b">
+        <div class="latest-box">
+            <!--img-------->
+            <div class="latest-b-img"><a href="https://play.google.com/store/apps/details?id=com.squareenixmontreal.deusexgo&hl=en_IN&gl=US" target="blank">
+                <img src="https://upload.wikimedia.org/wikipedia/en/c/cb/Deus_ex_go_logo.png"></a>
+            </div>
+            <!--text---------->
+            <div class="latest-b-text">
+                <strong>DEUS EX GO</strong>
+                <p>Puzzle Game</p>
+            </div>
+        </div>
+    </li>
+    <!--slide-box-3------------------>
+    <li class="item-c">
+        <div class="latest-box">
+            <!--img-------->
+            <div class="latest-b-img"><a href="https://laytonseries.com/curiousvillage/index.php/en/" target="blank">
+                <img src="https://upload.wikimedia.org/wikipedia/en/1/1b/Professor_Layton_and_the_Curious_Village_NA_Boxart.JPG"></a>
+            </div>
+            <!--text---------->
+            <div class="latest-b-text">
+                <strong> PROFESSOR LAYTON</strong>
+                <p>Puzzle Game</p>
+            </div>
+        </div>
+    </li>
+    <!--slide-box-4------------------>
+    <li class="item-d">
+        <div class="latest-box">
+            <!--img-------->
+            <div class="latest-b-img"><a href="https://cyan.com/games/myst/" target="blank">
+                <img src="https://upload.wikimedia.org/wikipedia/en/6/6a/MystCover.png"></a>
+            </div>
+            <!--text---------->
+            <div class="latest-b-text">
+                <strong>MYST</strong>
+                <p>Puzzle Game</p>
+            </div>
+        </div>
+    </li>
+    <!--slide-box-5------------------>
+    <li class="item-e">
+        <div class="latest-box">
+            <!--img-------->
+            <div class="latest-b-img"><a href="http://play.threesgame.com/" target="blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Threes%21_app_icon.png"></a>
+            </div>
+            <!--text---------->
+            <div class="latest-b-text">
+                <strong>THREES</strong>
+                <p>Maths Puzzle Game</p>
+            </div>
+        </div>
+    </li>
+    <!--slide-box-6------------------>
+    <li class="item-f">
+        <div class="latest-box">
+            <!--img-------->
+            <div class="latest-b-img"><a href="https://store.steampowered.com/app/210970/The_Witness/" target="blank">
+                <img src="https://upload.wikimedia.org/wikipedia/en/f/f4/The_Witness_cover.jpg"></a>
+            </div>
+            <!--text---------->
+            <div class="latest-b-text">
+                <strong>THE WITNESS</strong>
+                <p>Puzzle Game</p>
+            </div>
+        </div>
+    </li>
+    <!--slide-box-7------------------>
+    <li class="item-g">
+        <div class="latest-box">
+            <!--img-------->
+            <div class="latest-b-img"><a href="https://keeptalkinggame.com/" target="blank">
+                <img src="https://store-images.s-microsoft.com/image/apps.60381.14375974149324937.a7b7d79a-6907-44c2-8aeb-cf40e6d0f575.81f80bd4-e575-4022-8149-400f31fc388c"></a>
+            </div>
+            <!--text---------->
+            <div class="latest-b-text">
+                <strong>KEEP TALKING AND NOBODY EXPLODES</strong>
+                <p>Puzzle Game</p>
+            </div>
+        </div>
+    </li>
+          </ul>
+    </section>
+    <!--GAMES---------------------------->
+    <div class="games-heading">
+        <h2>Some More Games</h2>
+    </div>
+    <section id="games-list">
+        <!--box-1------------------------>
+        <div class="games-box">
+            <!--img------------>
+            <div class="games-img">
+                <div class="quality"></div>
+                <img src="https://www.mobygames.com/images/covers/l/489235-rooms-the-unsolvable-puzzle-playstation-4-front-cover.jpg">
+            </div>
+            <!--text--------->
+            <a href="https://www.handmadegame.net/gamerooms2" target="blank">
+                <b>Rooms:The Unsolvable Puzzle</b>(click here for more info)
+            </a>
+        </div>
+         <!--box-2------------------------>
+         <div class="games-box">
+            <!--img------------>
+            <div class="games-img">
+                <div class="quality"></div>
+                <img src="https://images-eu.ssl-images-amazon.com/images/I/91TTaLctmpL.png">
+            </div>
+            <!--text--------->
+            <a href="https://www.kiragames.com/" target="blank">
+               <b>Unblock Me</b>(click here for more info)
+            </a>
+        </div>
+         <!--box-3------------------------>
+         <div class="games-box">
+            <!--img------------>
+            <div class="games-img">
+                <div class="quality"></div>
+                <img src="https://cdkeyprices.com/images/games/653009/cover.jpg">
+            </div>
+            <!--text--------->
+            <a href="http://www.antichamber-game.com/" target="blank">
+              <b>Antichamber</b>(click here for more info)
+            </a>
+        </div>
+         <!--box-4------------------------>
+         <div class="games-box">
+            <!--img------------>
+            <div class="games-img">
+                <div class="quality"></div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Sudoku_Puzzle_by_L2G-20050714_standardized_layout.svg/1200px-Sudoku_Puzzle_by_L2G-20050714_standardized_layout.svg.png">
+            </div>
+            <!--text--------->
+            <a href="https://sudoku.com/" target="blank">
+                 <b>Sudoku</b>(click here for more info)
+            </a>
+        </div>
+         <!--box-5------------------------>
+         <div class="games-box">
+            <!--img------------>
+            <div class="games-img">
+                <div class="quality"></div>
+                <img src="https://mobimg.b-cdn.net/v2/fetch/01/01de3f43f155d779da501dcfc5a4a5a9.jpeg">
+            </div>
+            <!--text--------->
+            <a href="https://play.google.com/store/apps/details?id=com.bitmango.rolltheballunrollme&hl=en_IN&gl=US" target="blank">
+               <b>Roll The Ball</b>(click here for more info)
+            </a>
+        </div>
+         <!--box-6------------------------>
+         <div class="games-box">
+            <!--img------------>
+            <div class="games-img">
+                <div class="quality"></div>
+                <img src="https://techcrunch.com/wp-content/uploads/2011/12/ctr_comic_icon.png?w=512">
+            </div>
+            <!--text--------->
+            <a href="https://cuttherope.net/" target="blank">
+               <b>Cut the Rope</b>(click here for more info)
+            </a>
+        </div>
+         <!--box-7------------------------>
+         <div class="games-box">
+            <!--img------------>
+            <div class="games-img">
+                <div class="quality"></div>
+                <img src="https://store-images.s-microsoft.com/image/apps.15287.9007199266251857.61e28be5-5e37-4a0a-a1c6-166daf5a647c.69d4145d-425e-4ecb-af22-6246d54957fe?mode=scale&q=90&h=720&w=1280">
+            </div>
+            <!--text--------->
+            <a href="https://magicpuzzles.net/" target="blank">
+              <b>Magic puzzle</b>(click here for more info)
+            </a>
+        </div>
+         <!--box-8------------------------>
+         <div class="games-box">
+            <!--img------------>
+            <div class="games-img">
+                <div class="quality"></div>
+                <img src="https://howlongtobeat.com/games/You_Must_Build_A_Boat_header.jpg">
+            </div>
+            <!--text--------->
+            <a href="https://play.google.com/store/apps/details?id=com.eightyeightgames.ymbab&hl=en_IN&gl=US" target="blank">
+                <b>You Must Build A Boat</b>(click here for more info)
+            </a>
+        </div>
+    </section>
+ <script>
+         $(document).ready(function() {
+    $('#autoWidth,#autoWidth2').lightSlider({
+        autoWidth:true,
+        loop:true,
+        onSliderLoad: function() {
+            $('#autoWidth,#autoWidth2').removeClass('cS-hidden');
+        }
+    });
+  });
+ </script>
+
+    <!--footer------------------>
+    <footer>
+        <p>WEBZ_STATION, Ltd Consumer Website</p>
+        <p>Copyright 2021 - WEBZ_STATIONt</p>
+    </footer>
+
+</body>
+</html>

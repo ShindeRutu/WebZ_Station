@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sport Games</title>
+
+     <!-- Favicons -->
+  <link href="logo.png" rel="icon">
+  <link href="logo.png" rel="apple-touch-icon">
+
+  <link rel="stylesheet" href="css/lightslider.css">
+  <script src="js/JQuery3.3.1.js"></script>
+  <script src="js/lightslider.js"></script>
+
+  <style>
+     body{
+    margin:0px;
+    padding: 0px;
+    background-color: rgba(151,151,151,0.03);
+    background: linear-gradient(to top right, #000000 1%, #ffffff 100%)
+
+}
+*{
+    box-sizing: border-box;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+nav{
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width:100%;
+    border:1px solid rgba(0,0,0,0.04);
+    background-color: #ffffff;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+}
+.logo{
+ 
+    font-size:15px;
+    color:#000;
+    text-transform:uppercase;
+}
+nav .menu{
+    display: flex;
+}
+nav .menu li a{
+    height: 40px;
+    line-height: 43px;
+    margin: 0px;
+    padding: 0px 22px;
+    display: flex;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    color:#000000;
+    letter-spacing: 1px;
+}
+
+nav .menu li a:hover{
+    background-color: #242424;
+    color:#ffffff;
+    box-shadow: 5px 10px 30px rgba(53,53,53,0.1);
+    transition: all ease 0.2s;
+}
+#main{
+    padding-top: 80px;
+    background-color: #ffffff;
+    background: linear-gradient(to bottom right, #000000 1%, #ffffff 100%)
+
+}
+.showcase-box{
+    width:440px;
+    height: 480px;
+    box-shadow: 5px 15px 30px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    margin:0px 20px 10px 20px;
+    overflow: hidden;
+}
+.showcase-box img{
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+.showcase-heading{
+    padding-left: 30px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    color: #f8f8ff;
+}
+.cs-hidden{
+    overflow: visible !important;
+}
+#latest{
+    border-top: 1px solid rgba(53,53,53,0.1);
+}
+.latest-heading{
+    margin: 30px 30px 0px 30px;
+    font-weight: 500;
+    font-size: 1.3rem;
+    color:#ffffff;
+}
+.latest-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 2px 2px 30px rgba(0,0,0,0.2);
+    margin: 20px 10px;
+    border-radius: 10px;
+    overflow:hidden;
+    width:200px;
+    background-color: #402f2f;
+}
+.latest-b-img{
+    width:100%;
+    height: 270px;
+}
+.latest-b-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.latest-b-text strong{
+    padding:6px;
+    color:#fff;
+    margin: 0px;
+}
+.latest-b-text{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px;
+}
+.latest-b-text p{
+    color:#979797;
+    margin: 0px;
+}
+.games-heading h2{
+    font-weight: 400;
+    margin: 0px;
+    padding: 1px 20px;
+    background-color: rgba(0,0,0,0.01);
+
+    font-size: 1.7rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    width: 100%;
+}
+.games-heading{
+    display: flex;
+    margin:0px 2%;
+    color:#ffffff;
+}
+.games-box{
+    width:300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 2px 2px 30px rgba(0,0,0,0.2);
+    margin: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+    border-top: 3px solid #292929;
+}
+.games-img{
+    width:100%;
+    height: 400px;
+    position: relative;
+}
+.games-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.games-box a{
+    text-align:center;
+    display: block;
+    font-weight: 600;
+    display: -webkit-box;
+    max-width: 80%;
+    -webkit-line-clamp: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #f9f1f1;
+    margin: 20px;
+}
+.games-box:hover{
+    transform: translateY(-10px);
+    transition: all ease 0.2s;
+}
+#games-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.quality{
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #1f1f1f;
+    color: #ffffff;
+    padding: 5px 20px;
+    font-weight: 500;
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: 5px 10px 30px rgba(0,0,0,0.4);
+}
+
+footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid rgba(0,0,0,0.1);
+
+}
+footer p{
+    color:#ffffff;
+    margin: 10px 0px;
+    font-size: 0.9rem;
+}
+nav .menu-btn{
+    display: none;
+}
+@media(max-width:1100px){
+    nav{
+        justify-content: space-between;
+        height: 70px;
+        padding: 0px 10px;
+    }
+    nav .menu{
+       display: none;
+        position: absolute;
+        top: 65px;
+        left: 0px;
+        background: #fff;
+        border-bottom:4px solid #242424;
+        width:100%;
+        padding:0px;
+        margin:0px;
+    }
+    .menu li{
+        width:100%;
+    }
+    nav .menu li a{
+        width: 100%;
+        height: 40px;
+        align-items: center;
+        margin: 0px;
+        padding:25px;
+        border:1px solid rgba(38,38,38,0.03);
+    }
+
+    nav .menu-icon{
+        cursor: pointer;
+        float: right;
+        padding:28px 20px;
+        position: relative;
+        user-select: none;
+        display: block;
+    }
+    nav .menu-icon .nav-icon{
+        background-color: #333333;
+        display: block;
+        height: 2px;
+        position: relative;
+        transition: background 0.2s ease-out;
+        width: 18px;
+    }
+    nav .menu-icon .nav-icon:before,
+    nav .menu-icon .nav-icon:after{
+        background: #333333;
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        transition: all ease-out 0.2s;
+        width: 100%;
+    }
+    nav .menu-icon .nav-icon:before{
+        top:5px;
+    }
+    nav .menu-icon .nav-icon:after{
+        top:-5px;
+    }
+    nav .menu-btn:checked ~ .menu-icon .nav-icon{
+        background: transparent;
+
+    }
+    nav .menu-btn:checked ~ .menu-icon .nav-icon:before{
+        transform: rotate(-45deg);
+        top: 0;
+    }
+    nav .menu-btn:checked ~ .menu-icon .nav-icon:after{
+        transform: rotate(45deg);
+        top: 0;
+    }
+    nav .menu-btn{
+        display: none;
+    }
+    nav .menu-btn:checked ~ .menu{
+        display: block;
+    }
+}
+@media(max-width:680px){
+    .showcase-box{
+        max-width: 300px;
+        height: 180px;
+        margin: 10px;
+    }
+    .latest-box{
+        width:190px;
+        margin: 20px 5px;
+    }
+    .movies-box{
+        flex-direction: row;
+        width:90%;
+        border: 1px solid rgba(0,0,0,0.2);
+    }
+    .movies-box a{
+        width:65%;
+    }
+    footer{
+        justify-content: space-between;
+        padding:0px 20px;
+        text-align: center;
+    }
+}
+@media(max-width:440px){
+    .movies-box a,.movies-box{
+        width: 100%;
+    }
+    .movies-box{
+        flex-direction: column;
+    }
+    .logo img{
+        height: 30px;
+    }
+    .search{
+        width: 90%;
+        height: 40px;
+    }
+}
+  </style>
+</head>
+<body>
+ <!--navigation-------------->
+    <nav>
+        <!--logo--------------->
+        <a href="#" class="logo">
+            <h1>Webz_Station</h1>
+        </a>
+        <!--menu--btn----------------->
+        <input type="checkbox" class="menu-btn" id="menu-btn"/>
+        <label class="menu-icon" for="menu-btn">
+            <span class="nav-icon"></span>
+        </label>
+        <!--menu-------------->
+        <ul class="menu">
+            <li><a href="../Gp/index.html">Home</a></li>
+            <li><a href="web.html">Games</a></li>
+            <li><a href="../Gp/index.html#services">Services</a></li>
+            <li><a href="../Gp/index.html#about">About</a></li>
+            <li><a href="../Gp/index.html#footer">contact</a></li>
+
+        </ul>
+
+    </nav>
+    <section id="main">
+        <!--showcase----------------------->
+        <!--heading------------->
+        <h1 class="showcase-heading">Showcase</h1>
+
+        <ul id="autoWidth" class="cs-hidden">
+
+        <!--box-1--------------------------->
+        <li class="item-a">
+            <!--showcase-box------------------->
+           <div class="showcase-box"><a href="https://www.ea.com/en-gb/games/fifa/fifa-21" target="blank">
+               <img src="https://wallpapercave.com/wp/wp6710683.jpg"/>
+                    </a>
+
+           </div>
+               </li>
+            <!--box-2--------------------------->
+            <li class="item-b">
+                <!--showcase-box------------------->
+               <div class="showcase-box"><a href="https://www.mutantfootballleague.com/" target="blank">
+                   <img src="https://image.api.playstation.com/cdn/UP1090/CUSA09188_00/ANjHWi6bV8eSb4yRGCnzljYDMQwmyfDV.png"></a>
+               </div>
+                   </li>
+                <!--box-3--------------------------->
+            <li class="item-c">
+                <!--showcase-box------------------->
+               <div class="showcase-box"><a href="https://www.ubisoft.com/en-gb/game/steep" target="blank">
+                   <img src="https://image.api.playstation.com/cdn/EP0001/CUSA05526_00/79N4QFa9wgKHnedhpuoeDlVFouTCBUnd.png"/></a>
+               </div>
+                   </li>
+                <!--box-4--------------------------->
+            <li class="item-d">
+                <!--showcase-box------------------->
+               <div class="showcase-box"><a href="https://www.footballmanager.com/#desktop" target="blank">
+                   <img src="https://cdn2.unrealengine.com/egs-footballmanager2021-sportsinteractive-s1-2560x1440-070457508.jpg"/></a>
+               </div>
+                   </li>
+                   <!--box-5--------------------------->
+            <li class="item-e">
+                <!--showcase-box------------------->
+               <div class="showcase-box"><a href="https://www.ea.com/games/madden-nfl/madden-nfl-21?setLocale=en-us?setLocale=en-us" target="blank">
+                   <img src="https://www.spieltimes.com/wp-content/uploads/2020/07/madden-nfl-21-74-portrait.png"/></a>
+               </div>
+                   </li>
+             <li class="item-f">
+                <!--showcase-box------------------->
+               <div class="showcase-box"><a href="https://www.playstation.com/en-in/games/nba-2k21/" target="blank">
+                   <img src="https://store-images.s-microsoft.com/image/apps.57379.14264324671165343.db82f2c3-fdc7-40c5-a140-7e3ace8903a5.51d6709a-adcd-46e7-a397-5e2f3551e8ad"/></a>
+               </div>
+                   </li>
+            <li class="item-g">
+                <!--showcase-box------------------->
+               <div class="showcase-box"><a href="https://www.spike-chunsoft.com/FPWW/" target="blank">
+                   <img src="https://www.mobygames.com/images/covers/l/483991-fire-pro-wrestling-world-playstation-4-front-cover.jpg"/></a>
+               </div>
+                   </li>
+             <li class="item-h">
+                <!--showcase-box------------------->
+               <div class="showcase-box"><a href="https://www.2k.com/en-US/game/wwe-2k16-standard-edition/" target="blank">
+                   <img src="https://2k.com/manual/wwe2k16/img/WWE2K16_Logo.png"/></a>
+               </div>
+                   </li>
+            <li class="item-i">
+                <!--showcase-box------------------->
+               <div class="showcase-box"><a href="https://www.team17.com/games/golf-with-your-friends/" target="blank">
+                   <img src="https://repack-games.com/wp-content/uploads/2020/05/Golf-With-Your-Friends-Repack-Games.jpg"/></a>
+               </div>
+                   </li>
+             <li class="item-j">
+                <!--showcase-box------------------->
+               <div class="showcase-box"><a href="https://www.konami.com/wepes/2021/eu/en/ps4/" target="blank">
+                   <img src="https://img.konami.com/products_master/eu_publish/pes2021/eu/en/images/pes2021_4ambassadors_1920-1080_02.jpg"/></a>
+               </div>
+                   </li>
+          </ul>
+
+    </section>
+    <!--latest-games---------------------->
+    <section id="latest">
+        <h2 class="latest-heading">Sport Games</h2>
+        <!--slider------------------->
+        <ul id="autoWidth2" class="cs-hidden">
+            <!--slide-box-1------------------>
+            <li class="item-a">
+                <div class="latest-box">
+                    <!--img-------->
+                    <div class="latest-b-img"><a href="https://supermegabaseball.com/" target="blank">
+                        <img src="https://store-images.s-microsoft.com/image/apps.6230.13728510900587088.c32ad4cb-c837-4a7f-ab8d-c3d9ca2cb384.a837a727-84fc-4acc-9b6a-7584c6c7e4bd"></a>
+                    </div>
+                    <!--text---------->
+                    <div class="latest-b-text">
+                        <strong>SUPER MEGA BASEBALL 3</strong>
+                        <p>sports GAME</p>
+                    </div>
+                </div>
+            </li>
+    <!--slide-box-2------------------>
+    <li class="item-b">
+        <div class="latest-box">
+            <!--img-------->
+            <div class="latest-b-img"><a href="https://www.supergiantgames.com/games/pyre/" target="blank">
+                <img src="https://steamcdn-a.akamaihd.net/steam/apps/462770/capsule_616x353.jpg?t=1601500944"></a>
+            </div>
+            <!--text---------->
+            <div class="latest-b-text">
+                <strong>PYRE</strong>
+                <p>Sports RPG Game</p>
+            </div>
+        </div>
+    </li>
+    <!--slide-box-3------------------>
+    <li class="item-c">
+        <div class="latest-box">
+            <!--img-------->
+            <div class="latest-b-img"><a href="http://guide.bloodbowl-game.com/en/game" target="blank">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/36/Blood_Bowl_2_cover_art.jpg/220px-Blood_Bowl_2_cover_art.jpg"></a>
+            </div>
+            <!--text---------->
+            <div class="latest-b-text">
+                <strong>BlOOD BOWL 2</strong>
+                <p>SPORTS Game</p>
+            </div>
+        </div>
+    </li>
+    <!--slide-box-4------------------>
+    <li class="item-d">
+        <div class="latest-box">
+            <!--img-------->
+            <div class="latest-b-img"><a href="https://www.ea.com/games/knockout-city" target="blank">
+                <img src="https://media.contentapi.ea.com/content/dam/eacom/c-ko/news/common/brawlers-key-art-screenshot-16x9-1.jpg.adapt.crop191x100.628p.jpg"></a>
+            </div>
+            <!--text---------->
+            <div class="latest-b-text">
+                <strong>KNOCKOUT CITY</strong>
+                <p>SPORTS Game</p>
+            </div>
+        </div>
+    </li>
+    <!--slide-box-5------------------>
+    <li class="item-e">
+        <div class="latest-box">
+            <!--img-------->
+            <div class="latest-b-img"><a href="https://store.steampowered.com/app/695290/The_Golf_Club_2019_featuring_PGA_TOUR/" target="blank">
+                <img src="https://cdn.cdkeys.com/700x700/media/catalog/product/g/o/golfclubbase_1.png"></a>
+            </div>
+            <!--text---------->
+            <div class="latest-b-text">
+                <strong>THE GOLF CLUB 2019</strong>
+                <p> Sports Game</p>
+            </div>
+        </div>
+    </li>
+    <!--slide-box-6------------------>
+    <li class="item-f">
+        <div class="latest-box">
+            <!--img-------->
+            <div class="latest-b-img"><a href="https://pro-cycling-manager.com/" target="blank">
+                <img src="https://s1.gaming-cdn.com/images/products/8607/orig/pro-cycling-manager-2021-cover.jpg"></a>
+            </div>
+            <!--text---------->
+            <div class="latest-b-text">
+                <strong> PRO CYCLING MANAGER</strong>
+                <p>Sports Game</p>
+            </div>
+        </div>
+    </li>
+    <!--slide-box-7------------------>
+    <li class="item-g">
+        <div class="latest-box">
+            <!--img-------->
+            <div class="latest-b-img"><a href="https://store.steampowered.com/app/488920/Knockout_League__Arcade_VR_Boxing/" target="blank">
+                <img src="https://pbs.twimg.com/profile_images/963541780124917761/Vyy7b6zL.jpg"></a>
+            </div>
+            <!--text---------->
+            <div class="latest-b-text">
+                <strong>KNOCKOUT LEAGUE</strong>
+                <p>Sports Game</p>
+            </div>
+        </div>
+    </li>
+          </ul>
+    </section>
+    <!--GAMES---------------------------->
+    <div class="games-heading">
+        <h2>Some More Games</h2>
+    </div>
+    <section id="games-list">
+        <!--box-1------------------------>
+        <div class="games-box">
+            <!--img------------>
+            <div class="games-img">
+                <div class="quality"></div>
+                <img src="https://www.olympicvideogames.com/tokyo2020/og_img.jpg">
+            </div>
+            <!--text--------->
+            <a href="https://www.olympicvideogames.com/tokyo2020/uk/" target="blank">
+                <b>Olympics games Tokyo 2020</b>(click here for more info)
+            </a>
+        </div>
+         <!--box-2------------------------>
+         <div class="games-box">
+            <!--img------------>
+            <div class="games-img">
+                <div class="quality"></div>
+                <img src="https://pbs.twimg.com/profile_images/1280509743916818433/TuTKjXpw.jpg">
+            </div>
+            <!--text--------->
+            <a href="https://www.ea.com/games/ufc/ufc-4" target="blank">
+               <b>UFC-4</b>(click here for more info)
+            </a>
+        </div>
+         <!--box-3------------------------>
+         <div class="games-box">
+            <!--img------------>
+            <div class="games-img">
+                <div class="quality"></div>
+                <img src="https://store-images.s-microsoft.com/image/apps.56821.14172534258358028.17c659da-90fb-4c9d-9dfa-2c8f147ed791.9cbd2c3d-5fd6-4c7e-b2e2-a2ef2ed4a6a7">
+            </div>
+            <!--text--------->
+            <a href="https://tennisworldtourgame.com/" target="blank">
+              <b>Tennis World Tour 2</b>(click here for more info)
+            </a>
+        </div>
+         <!--box-4------------------------>
+         <div class="games-box">
+            <!--img------------>
+            <div class="games-img">
+                <div class="quality"></div>
+                <img src="https://cdn-products.eneba.com/resized-products/ybvx0zc8nxkqorpfjjsp_350x200_1x-0.jpg">
+            </div>
+            <!--text--------->
+            <a href="https://www.easports.com/fifa/2018-fifa-world-cup-update" target="blank">
+                 <b>Fifa 18</b>(click here for more info)
+            </a>
+        </div>
+         <!--box-5------------------------>
+         <div class="games-box">
+            <!--img------------>
+            <div class="games-img">
+                <div class="quality"></div>
+                <img src="https://rukminim1.flixcart.com/image/416/416/jmz7csw0/code-in-the-box-game/e/q/w/pc-fifa-19-standard-edition-original-imaf9ngyxh7zm5gt.jpeg?q=70">
+            </div>
+            <!--text--------->
+            <a href="https://www.ea.com/games/fifa/fifa-19" target="blank">
+               <b>Fifa 19</b>(click here for more info)
+            </a>
+        </div>
+         <!--box-6------------------------>
+         <div class="games-box">
+            <!--img------------>
+            <div class="games-img">
+                <div class="quality"></div>
+                <img src="https://images-na.ssl-images-amazon.com/images/I/81TFHy-pjNL._SL1500_.jpg">
+            </div>
+            <!--text--------->
+            <a href="https://www.ea.com/games/fifa/fifa-20" target="blank">
+               <b>Fifa 20</b>(click here for more info)
+            </a>
+        </div>
+         <!--box-7------------------------>
+         <div class="games-box">
+            <!--img------------>
+            <div class="games-img">
+                <div class="quality"></div>
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/3a/05_NHL_Shield.svg/1200px-05_NHL_Shield.svg.png">
+            </div>
+            <!--text--------->
+            <a href="https://www.ea.com/games/nhl" target="blank">
+              <b>NHL(ALL SERIES)</b>(click here for more info)
+            </a>
+        </div>
+         <!--box-8------------------------>
+         <div class="games-box">
+            <!--img------------>
+            <div class="games-img">
+                <div class="quality"></div>
+                <img src="https://m.media-amazon.com/images/M/MV5BOGY5MjkzYWUtYWEyMy00MTdiLWJhZmQtMzA1NDE3NGU0NjI1XkEyXkFqcGdeQXVyNjE5NjgwNjU@._V1_.jpg">
+            </div>
+            <!--text--------->
+            <a href="https://store.steampowered.com/app/804490/Creed_Rise_to_Glory/" target="blank">
+                <b>Creed Rise to Glory</b>(click here for more info)
+            </a>
+        </div>
+    </section>
+ <script>
+         $(document).ready(function() {
+    $('#autoWidth,#autoWidth2').lightSlider({
+        autoWidth:true,
+        loop:true,
+        onSliderLoad: function() {
+            $('#autoWidth,#autoWidth2').removeClass('cS-hidden');
+        }
+    });
+  });
+ </script>
+
+    <!--footer------------------>
+    <footer>
+        <p>WEBZ_STATION, Ltd Consumer Website</p>
+        <p>Copyright 2021 - WEBZ_STATIONt</p>
+    </footer>
+
+</body>
+</html>
